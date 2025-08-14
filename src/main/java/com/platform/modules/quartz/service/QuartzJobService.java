@@ -53,6 +53,6 @@ public interface QuartzJobService extends BaseService<QuartzJob> {
      */
     void addDelayedJob(String jobName, String invokeTarget, int delaySeconds);
 
-    void triggerDelayedMessage(PushFrom pushFrom, PushMoment pushMoment, List<Long> receiveList, PushMomentEnum msgType, int delaySeconds);
+    void triggerDelayedMessage(Long receiveList, int delaySeconds);
 
 }
