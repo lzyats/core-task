@@ -1,7 +1,12 @@
 package com.platform.modules.quartz.service;
 
 import com.platform.common.web.service.BaseService;
+import com.platform.modules.push.dto.PushFrom;
+import com.platform.modules.push.dto.PushMoment;
+import com.platform.modules.push.enums.PushMomentEnum;
 import com.platform.modules.quartz.domain.QuartzJob;
+
+import java.util.List;
 
 /**
  * 定时任务调度信息信息 服务层
@@ -42,5 +47,12 @@ public interface QuartzJobService extends BaseService<QuartzJob> {
      * 更新任务
      */
     Integer updateJob(QuartzJob quartzJob);
+
+    /**
+     * 一次性延时任务
+     */
+    void addDelayedJob(String jobName, String invokeTarget, int delaySeconds);
+
+    void triggerDelayedMessage(PushFrom pushFrom, PushMoment pushMoment, List<Long> receiveList, PushMomentEnum msgType, int delaySeconds);
 
 }

@@ -68,6 +68,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- core-push -->
+        <dependency>
+            <groupId>com.platform</groupId>
+            <artifactId>core-push</artifactId>
+            <version>${platform.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--hutool 工具包 -->
         <dependency>
             <groupId>cn.hutool</groupId>
