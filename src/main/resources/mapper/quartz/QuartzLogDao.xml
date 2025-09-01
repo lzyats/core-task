@@ -26,5 +26,9 @@
             </if>
         </where>
     </select>
-
+    <!-- 删除 chat_user_sign 表中符合条件的数据（建议移到对应 DAO 的 Mapper 中） -->
+    <delete id="dellogs">
+        delete from quartz_log
+        ${ew.customSqlSegment}  <!-- 依赖 QueryWrapper 传入条件（如“三天前的数据”） -->
+    </delete>
 </mapper> 
